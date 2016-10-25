@@ -2,23 +2,8 @@
 
 // GENERATE ASTEROIDS IN HTML DOCUMENT
 
-for (var i = 0; i < 100; i++) {
-
-  var asteroid = new Image();
-  asteroid.id = "asteroid" + i.toString();
-  asteroid.src = "asteroid.png";
-  asteroid.style.height = (((Math.random() * 6) + 0)*30);
-  asteroid.style.position = "absolute";
-  asteroid.style.top = (((Math.random() * 6) + 0)*100);
-  asteroid.style.right = -200;
-  var asteroidPosition = asteroid.style.right;
-  var asteroidID = asteroid.id;
-
-  document.body.appendChild(asteroid);
-
-}
-
-
+import createAsteroids from "./createAsteroids.js"
+createAsteroids();
 // MOVEMENT CONTROLS FOR SHIP
 
 // declare & initialize movement variables
@@ -167,5 +152,10 @@ function gameLoop()
      }
 
   // loop
-  setTimeout("gameLoop()",10);
+  setTimeout(gameLoop, 10);
+
 }
+gameLoop();
+
+  window.addEventListener("keydown", keyDown);
+  window.addEventListener("keyup", keyUp);

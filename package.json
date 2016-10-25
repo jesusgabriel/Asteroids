@@ -1,0 +1,39 @@
+{
+  "name": "Asteroids",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-preset-minify-es2015": "0.0.3",
+    "babelify": "^7.3.0",
+    "watchify": "^3.7.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch":"watchify js/main.js -o js/prod.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jesusgabriel/Asteroids.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jesusgabriel/Asteroids/issues"
+  },
+  "homepage": "https://github.com/jesusgabriel/Asteroids#readme",
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015"
+          ]
+        }
+      ]
+    ]
+  }
+}
